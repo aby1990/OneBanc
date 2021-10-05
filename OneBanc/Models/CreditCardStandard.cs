@@ -45,7 +45,7 @@ namespace OneBanc.Models
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine($"Error -StandardizeStatement - {ex.Message}");
             }
 
         }
@@ -89,7 +89,7 @@ namespace OneBanc.Models
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine($"Error while creating output file - {outputFile} - {ex.Message}");
             }
         }
 
@@ -175,7 +175,7 @@ namespace OneBanc.Models
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine($"Error -MapCsvDatatoStandardFormat - {ex.Message}");
             }
             return creditCardStandards;
         }
