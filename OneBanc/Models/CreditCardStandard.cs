@@ -117,11 +117,12 @@ namespace OneBanc.Models
 
         public List<CreditCardStandard> MapCsvDatatoStandardFormat(ICreditCard creditCard)
         {
-            string tranIdentifier = "Transactions";
+            string tranIdentifier = "Transaction";
             string headIdentifier = "Date";
 
             string tranType = string.Empty;
             string cardName = string.Empty;
+            //defined a mapping in respective card statement class as per the input file type
             int[] mapping = creditCard.Mapping;
             List<CreditCardStandard> creditCardStandards = new List<CreditCardStandard>();
             try
@@ -179,12 +180,13 @@ namespace OneBanc.Models
             return creditCardStandards;
         }
 
+        //fetching location from description
         string GetLocation(string desc)
         {
             return desc.Substring(desc.LastIndexOf(' ') + 1).ToLower(); ;
         }
 
-
+        //handling multiple date formats
         DateTime GetTranDate(string date)
         {
             string[] formats = { "MM-dd-yyyy", "dd-MM-yyyy", "dd-MM-yy" };
