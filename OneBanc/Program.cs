@@ -7,8 +7,9 @@ namespace OneBanc
     {
         static void Main(string[] args)
         {
-            string[] fileEntries = Directory.GetFiles(@"../../../Input/");
-            foreach (string inputFile in fileEntries)
+            //fetch file list from input directory
+            string[] fileList = Directory.GetFiles(@"../../../Input/");
+            foreach (string inputFile in fileList)
             {
                 CreditCardStandard creditCardStandard = new CreditCardStandard();
                 string outputFile = inputFile.Replace("Input", "Output");
