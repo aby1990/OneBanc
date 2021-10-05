@@ -23,7 +23,7 @@ namespace OneBanc
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"Error while standardising file {fileName}");
+                Console.WriteLine($"Error while standardising file {fileName} - {ex.Message}");
             }
         }        
     }
